@@ -52,16 +52,6 @@
             key-positions = <17 16>;
             timeout-ms = <30>;
         };
-
-        LeftNav {
-            bindings = <&kp LC(LEFT)>;
-            key-positions = <65 40>;
-        };
-
-        RightNav {
-            bindings = <&kp LC(RIGHT)>;
-            key-positions = <65 43>;
-        };
     };
 
     keymap {
@@ -70,11 +60,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL   &kp N1               &kp N2               &kp N3               &kp N4               &kp N5  &tog 1                                                                                              &mo 3                    &kp N6  &kp N7          &kp N8        &kp N9       &kp N0              &kp MINUS
-&kp ESCAPE  &kp Q                &kp W                &kp E                &kp R                &kp T   &mo 2                                                                                               &mo 2                    &kp Y   &kp U           &kp I         &kp O        &kp P               &kp BSLH
-&kp TAB     &hm LALT A           &hm LCTRL S          &hm LSHFT D          &hm LEFT_GUI F       &kp G   &kp LC(LG(LSHFT))  &kp LS(LA(LC(LGUI)))  &kp LEFT_COMMAND      &kp RGUI       &kp RS(RA(RC(RGUI)))  &kp RC(RG(RIGHT_SHIFT))  &kp H   &hm RGUI J      &hm RSHFT K   &hm RCTRL L  &hm RALT SEMICOLON  &kp SQT
-&kp LSHFT   &default_mt LG(Z) Z  &default_mt LG(X) X  &default_mt LG(C) C  &default_mt LG(V) V  &kp B                                            &kp LEFT_ALT          &kp RIGHT_ALT                                                 &kp N   &kp M           &kp COMMA     &kp DOT      &kp FSLH            &kp RSHFT
-&mo 0       &kp GRAVE            &caps_word           &kp LEFT             &kp RIGHT                    &kp BACKSPACE      &kp LEFT_SHIFT        &kp LCTRL             &kp RCTRL      &kp RIGHT_SHIFT       &kp SPACE                        &kp DOWN_ARROW  &kp UP_ARROW  &kp LBKT     &kp RBKT            &mo 0
+&kp EQUAL   &kp N1               &kp N2               &kp N3               &kp N4               &kp N5  &tog 1                                                                                   &mo 3                    &kp N6  &kp N7          &kp N8        &kp N9       &kp N0              &kp MINUS
+&kp ESCAPE  &kp Q                &kp W                &kp E                &kp R                &kp T   &mo 2                                                                                    &mo 2                    &kp Y   &kp U           &kp I         &kp O        &kp P               &kp BSLH
+&kp TAB     &hm LALT A           &hm LCTRL S          &hm LSHFT D          &hm LEFT_GUI F       &kp G   &kp LC(LG(LSHFT))  &mo 4           &kp LEFT_COMMAND      &kp RGUI       &mo 4            &kp RC(RG(RIGHT_SHIFT))  &kp H   &hm RGUI J      &hm RSHFT K   &hm RCTRL L  &hm RALT SEMICOLON  &kp SQT
+&kp LSHFT   &default_mt LG(Z) Z  &default_mt LG(X) X  &default_mt LG(C) C  &default_mt LG(V) V  &kp B                                      &kp LEFT_ALT          &kp RIGHT_ALT                                            &kp N   &kp M           &kp COMMA     &kp DOT      &kp FSLH            &kp RSHFT
+&mo 0       &kp GRAVE            &caps_word           &kp LEFT             &kp RIGHT                    &kp BACKSPACE      &kp LEFT_SHIFT  &kp LCTRL             &kp RCTRL      &kp RIGHT_SHIFT  &kp SPACE                        &kp DOWN_ARROW  &kp UP_ARROW  &kp LBKT     &kp RBKT            &mo 0
             >;
         };
 
@@ -111,6 +101,17 @@
             >;
         };
 
+        Hyper {
+            display-name = "Hyper";
+            bindings = <
+&trans  &kp LS(LA(LC(LG(N1))))     &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N3))))     &kp LS(LA(LC(LG(N4))))  &kp LS(LA(LC(LG(N5))))  &trans                                      &trans  &kp LS(LA(LC(LG(N6))))  &kp LS(LA(LC(LG(N7))))  &kp LS(LA(LC(LG(N8))))     &kp LS(LA(LC(LG(N9))))    &kp LS(LA(LC(LG(N0))))         &kp LS(LA(LC(LG(MINUS))))
+&trans  &kp LS(LA(LC(LG(Q))))      &kp LG(LC(LA(LS(W))))   &kp LS(LA(LC(LG(E))))      &kp LS(LA(LC(LG(R))))   &kp LS(LA(LC(LG(T))))   &trans                                      &trans  &kp LS(LA(LC(LG(Y))))   &kp LS(LA(LC(LG(U))))   &kp LS(LA(LC(LG(I))))      &kp LS(LA(LC(LG(O))))     &kp LS(LA(LC(LG(P))))          &kp LS(LA(LC(LG(BSLH))))
+&trans  &kp LS(LA(LC(LG(A))))      &kp LS(LA(LC(LG(S))))   &kp LS(LA(LC(LG(LSHFT))))  &kp LS(LA(LC(LG(F))))   &kp LS(LA(LC(LG(G))))   &trans  &trans  &trans      &trans  &trans  &trans  &kp LS(LA(LC(LG(H))))   &kp LS(LA(LC(LG(J))))   &kp LS(LA(LC(LG(K))))      &kp LS(LA(LC(LG(L))))     &kp LS(LA(LC(LG(SEMICOLON))))  &kp LS(LA(LC(LG(SQT))))
+&trans  &kp LG(LC(LA(LS(Z))))      &kp LG(LS(LA(LC(X))))   &kp LG(LS(LA(LC(C))))      &kp LG(LS(LA(LC(V))))   &kp LS(LA(LC(LG(B))))                   &trans      &trans                  &kp LS(LA(LC(LG(N))))   &kp LS(LA(LC(LG(M))))   &kp LS(LA(LC(LG(COMMA))))  &kp LS(LA(LC(LG(DOT))))   &kp LS(LA(LC(LG(FSLH))))       &trans
+&trans  &kp LS(LA(LC(LG(GRAVE))))  &trans                  &kp LC(LEFT)               &kp LC(RIGHT)                                   &trans  &trans  &trans      &trans  &trans  &trans                          &kp LC(DOWN_ARROW)      &kp LC(UP_ARROW)           &kp LS(LA(LC(LG(LBKT))))  &kp LS(LA(LC(LG(RBKT))))       &trans
+            >;
+        };
+
         BaseAlt {
             display-name = "Base";
             bindings = <
@@ -134,11 +135,6 @@
 
         extra3 {
             display-name = "Cyan";
-            status = "reserved";
-        };
-
-        extra4 {
-            display-name = "Yellow";
             status = "reserved";
         };
     };
