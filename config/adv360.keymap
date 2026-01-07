@@ -52,6 +52,16 @@
             key-positions = <17 16>;
             timeout-ms = <30>;
         };
+
+        LeftNav {
+            bindings = <&kp LC(LEFT)>;
+            key-positions = <65 40>;
+        };
+
+        RightNav {
+            bindings = <&kp LC(RIGHT)>;
+            key-positions = <65 43>;
+        };
     };
 
     keymap {
